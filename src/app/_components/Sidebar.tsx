@@ -11,7 +11,7 @@ export default function Sidebar() {
 
   return (
     <nav
-      className={cn('flex flex-col items-center gap-6 px-4', {
+      className={cn('flex flex-col items-center gap-6 px-4 max-sm:hidden', {
         'w-64': isOpen,
         'w-16': !isOpen,
       })}
