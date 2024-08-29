@@ -29,14 +29,35 @@ export const NAVBAR_SECTIONS: NavbarSection[] = [
   {
     name: 'Admin',
     navbarItems: [
-      { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
+      { name: 'Transações', icon: IoNavigateCircle, href: '/' },
       {
-        name: 'Folder Item',
+        name: 'Pagamentos',
         icon: IoNavigateCircle,
         navbarItems: [
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
+          { name: 'Últimos Pagamentos', icon: IoNavigateCircle, href: '/' },
+          {
+            name: 'Relatório de Pagamentos',
+            icon: IoNavigateCircle,
+            href: '/',
+          },
+        ],
+      },
+      { name: 'Relatório de Falhas', icon: IoNavigateCircle, href: '/' },
+      {
+        name: 'Funcionalidades',
+        icon: IoNavigateCircle,
+        navbarItems: [
+          {
+            name: 'Desligar Funcionalidade',
+            icon: IoNavigateCircle,
+            href: '/',
+          },
+          { name: 'Ativar Funcionalidade', icon: IoNavigateCircle, href: '/' },
+          {
+            name: 'Status de Funcionalidades',
+            icon: IoNavigateCircle,
+            href: '/',
+          },
         ],
       },
     ],
@@ -45,30 +66,23 @@ export const NAVBAR_SECTIONS: NavbarSection[] = [
     name: 'Transações',
     navbarItems: [
       {
-        name: 'A Very Long Normal Item That Probably Will Not Fit',
+        name: 'Nova Transações',
         icon: IoNavigateCircle,
         href: '/',
       },
-      { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-      { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
+      { name: 'Minhas Compras', icon: IoNavigateCircle, href: '/' },
+      { name: 'Minhas Vendas', icon: IoNavigateCircle, href: '/' },
+    ],
+  },
+  {
+    name: 'Pagamentos',
+    navbarItems: [
       {
-        name: 'A Very Long Folder Item That Probably Will Not Fit',
+        name: 'Meus Pagamentos',
         icon: IoNavigateCircle,
-        navbarItems: [
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-        ],
+        href: '/',
       },
-      {
-        name: 'Folder Item',
-        icon: IoNavigateCircle,
-        navbarItems: [
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-          { name: 'Normal Item', icon: IoNavigateCircle, href: '/' },
-        ],
-      },
+      { name: 'Realizar Pagamento', icon: IoNavigateCircle, href: '/' },
     ],
   },
 ];
