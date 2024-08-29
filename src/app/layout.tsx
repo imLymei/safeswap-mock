@@ -25,7 +25,7 @@ export default function RootLayout({
           'flex flex-col overflow-hidden bg-neutral-950 text-neutral-100',
         )}
       >
-        <div className='flex flex-1 p-2 selection:bg-blue-500 max-sm:flex-col max-sm:pb-0 sm:pl-0'>
+        <div className='flex max-h-svh flex-1 p-2 selection:bg-blue-500 max-sm:flex-col max-sm:pb-0 sm:pl-0'>
           <Sidebar />
           <main className='flex-1 rounded bg-neutral-100 text-neutral-950'>
             {children}
