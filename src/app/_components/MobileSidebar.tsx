@@ -76,7 +76,9 @@ export default function MobileSidebar() {
           ))}
         </div>
       </div>
-      {isOpen && <div className='absolute inset-0 backdrop-blur-[1px]' />}
+      {isOpen && (
+        <div className='absolute inset-0 bg-black/50 backdrop-blur-[1px]' />
+      )}
     </nav>
   );
 }
