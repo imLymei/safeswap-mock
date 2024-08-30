@@ -2,10 +2,8 @@ import { IconType } from 'react-icons';
 import { FaCogs } from 'react-icons/fa';
 import {
   FaArrowRightArrowLeft,
-  FaBagShopping,
   FaBug,
   FaCarOn,
-  FaCashRegister,
   FaChartLine,
   FaCreditCard,
   FaFileInvoiceDollar,

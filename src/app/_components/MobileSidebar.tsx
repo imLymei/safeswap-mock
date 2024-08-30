@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { FaMoneyBill, FaPlus } from 'react-icons/fa6';
-import { IoIosLock } from 'react-icons/io';
+import { IoIosExit, IoIosLock } from 'react-icons/io';
 import MobileSidebarItem from './MobileSidebarItem';
 
 export default function MobileSidebar() {
