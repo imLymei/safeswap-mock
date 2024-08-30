@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { FaMoneyBill, FaPlus } from 'react-icons/fa6';
 import { IoIosLock } from 'react-icons/io';
+import MobileSidebarItem from './MobileSidebarItem';
 
 export default function MobileSidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,20 +58,29 @@ export default function MobileSidebar() {
       >
         <div className='pointer-events-none absolute left-0 right-0 top-0 h-12 bg-gradient-to-b from-black' />
         <div className='h-full w-full space-y-12 overflow-auto p-6'>
-          {NAVBAR_SECTIONS.map((section, sectionIndex) => (
+          {NAVBAR_SECTIONS.map((section) => (
             <div key={`mobile-section-${section.name}`} className='space-y-6'>
               <p className='text-xl font-bold'>{section.name}</p>
               <div className='grid grid-cols-3 gap-4'>
-                {section.navbarItems.map((item, itemIndex) => (
-                  <Link
-                    href={item.href ?? ''}
-                    key={`mobile-section-${section.name}-item-${item.name}`}
-                    className='flex flex-col items-center gap-2 text-center'
-                  >
-                    <item.icon size={ICON_SIZE.LARGE} />
-                    <p>{item.name}</p>
-                  </Link>
-                ))}
+                {section.navbarItems.map((item) =>
+                  item.navbarItems ? (
+                    item.navbarItems.map((folderItem) => (
+                      <MobileSidebarItem
+                        key={`mobile-section-${section.name}-folder-${item.name}-item-${folderItem.name}`}
+                        name={folderItem.name}
+                        href={folderItem.href}
+                        icon={folderItem.icon}
+                      />
+                    ))
+                  ) : (
+                    <MobileSidebarItem
+                      key={`mobile-section-${section.name}-item-${item.name}`}
+                      name={item.name}
+                      href={item.href}
+                      icon={item.icon}
+                    />
+                  ),
+                )}
               </div>
             </div>
           ))}
