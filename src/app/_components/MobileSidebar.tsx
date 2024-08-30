@@ -84,6 +84,10 @@ export default function MobileSidebar() {
               </div>
             </div>
           ))}
+          <button className='flex w-full items-center justify-center gap-2 rounded bg-red-500/20 p-2 text-xl font-bold text-red-500 active:bg-red-500/50'>
+            <IoIosExit size={ICON_SIZE.MOBILE} />
+            <p>Sair</p>
+          </button>
         </div>
       </div>
       {isOpen && (
