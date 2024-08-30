@@ -17,9 +17,9 @@ import {
   FaToggleOff,
   FaToggleOn,
 } from 'react-icons/fa6';
-import { IoNavigateCircle } from 'react-icons/io5';
 
 export const ICON_SIZE = {
+  MOBILE: 20,
   SMALL: 30,
   MEDIUM: 45,
   LARGE: 60,
