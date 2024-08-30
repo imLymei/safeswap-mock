@@ -1,4 +1,22 @@
 import { IconType } from 'react-icons';
+import { FaCogs } from 'react-icons/fa';
+import {
+  FaArrowRightArrowLeft,
+  FaBagShopping,
+  FaBug,
+  FaCarOn,
+  FaCashRegister,
+  FaChartLine,
+  FaCreditCard,
+  FaFileInvoiceDollar,
+  FaHandHoldingDollar,
+  FaMoneyBill,
+  FaMoneyBillTransfer,
+  FaMoneyBillTrendUp,
+  FaMoneyCheckDollar,
+  FaToggleOff,
+  FaToggleOn,
+} from 'react-icons/fa6';
 import { IoNavigateCircle } from 'react-icons/io5';
 
 export const ICON_SIZE = {
@@ -29,33 +47,33 @@ export const NAVBAR_SECTIONS: NavbarSection[] = [
   {
     name: 'Admin',
     navbarItems: [
-      { name: 'Transações', icon: IoNavigateCircle, href: '/' },
+      { name: 'Transações', icon: FaArrowRightArrowLeft, href: '/' },
       {
         name: 'Pagamentos',
-        icon: IoNavigateCircle,
+        icon: FaMoneyBill,
         navbarItems: [
-          { name: 'Últimos Pagamentos', icon: IoNavigateCircle, href: '/' },
+          { name: 'Últimos Pagamentos', icon: FaMoneyBillTransfer, href: '/' },
           {
             name: 'Relatório de Pagamentos',
-            icon: IoNavigateCircle,
+            icon: FaMoneyBillTrendUp,
             href: '/',
           },
         ],
       },
-      { name: 'Relatório de Falhas', icon: IoNavigateCircle, href: '/' },
+      { name: 'Relatório de Falhas', icon: FaBug, href: '/' },
       {
         name: 'Funcionalidades',
-        icon: IoNavigateCircle,
+        icon: FaCogs,
         navbarItems: [
           {
             name: 'Desligar Funcionalidade',
-            icon: IoNavigateCircle,
+            icon: FaToggleOff,
             href: '/',
           },
-          { name: 'Ativar Funcionalidade', icon: IoNavigateCircle, href: '/' },
+          { name: 'Ativar Funcionalidade', icon: FaToggleOn, href: '/' },
           {
             name: 'Status de Funcionalidades',
-            icon: IoNavigateCircle,
+            icon: FaChartLine,
             href: '/',
           },
         ],
@@ -67,11 +85,11 @@ export const NAVBAR_SECTIONS: NavbarSection[] = [
     navbarItems: [
       {
         name: 'Nova Transações',
-        icon: IoNavigateCircle,
+        icon: FaHandHoldingDollar,
         href: '/',
       },
-      { name: 'Minhas Compras', icon: IoNavigateCircle, href: '/' },
-      { name: 'Minhas Vendas', icon: IoNavigateCircle, href: '/' },
+      { name: 'Minhas Compras', icon: FaCarOn, href: '/' },
+      { name: 'Minhas Vendas', icon: FaFileInvoiceDollar, href: '/' },
     ],
   },
   {
@@ -79,10 +97,10 @@ export const NAVBAR_SECTIONS: NavbarSection[] = [
     navbarItems: [
       {
         name: 'Meus Pagamentos',
-        icon: IoNavigateCircle,
+        icon: FaMoneyCheckDollar,
         href: '/',
       },
-      { name: 'Realizar Pagamento', icon: IoNavigateCircle, href: '/' },
+      { name: 'Realizar Pagamento', icon: FaCreditCard, href: '/' },
     ],
   },
 ];
