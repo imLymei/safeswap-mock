@@ -33,20 +33,20 @@ export default function MobileSidebar() {
   }, [isOpen]);
 
   return (
-    <nav className='grid grid-cols-3 gap-4 p-2 text-sm sm:hidden'>
+    <nav className='grid grid-cols-3 gap-4 p-2 text-xs sm:hidden'>
       <Link href='/' className='flex flex-col items-center gap-1 p-2'>
-        <FaMoneyBill size={ICON_SIZE.SMALL} />
+        <FaMoneyBill size={ICON_SIZE.MOBILE} />
         <p>Transações</p>
       </Link>
       <Link href='/' className='flex flex-col items-center gap-1 p-2'>
-        <IoIosLock size={ICON_SIZE.SMALL} />
+        <IoIosLock size={ICON_SIZE.MOBILE} />
         <p>Home</p>
       </Link>
       <button
         onClick={() => setIsOpen(true)}
         className='flex flex-col items-center gap-1 p-2'
       >
-        <FaPlus size={ICON_SIZE.SMALL} />
+        <FaPlus size={ICON_SIZE.MOBILE} />
         <p>Mais</p>
       </button>
       <div
@@ -61,7 +61,7 @@ export default function MobileSidebar() {
           {NAVBAR_SECTIONS.map((section) => (
             <div key={`mobile-section-${section.name}`} className='space-y-6'>
               <p className='text-xl font-bold'>{section.name}</p>
-              <div className='grid grid-cols-3 gap-4'>
+              <div className='grid grid-cols-3 gap-2'>
                 {section.navbarItems.map((item) =>
                   item.navbarItems ? (
                     item.navbarItems.map((folderItem) => (
