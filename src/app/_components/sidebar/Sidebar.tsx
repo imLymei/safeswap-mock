@@ -5,6 +5,7 @@ import { ICON_SIZE, NAVBAR_SECTIONS } from '@/lib/constants';
 import { useState } from 'react';
 import { IoIosExit, IoIosLock } from 'react-icons/io';
 import SideBarSection from './SideBarSection';
+import { IoCog } from 'react-icons/io5';
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
@@ -36,10 +37,16 @@ export default function Sidebar() {
           />
         ))}
       </div>
-      <button className='flex w-full items-center justify-center gap-2 rounded p-2 text-red-500 hover:bg-red-500/20'>
-        <IoIosExit size={ICON_SIZE.SMALL} />
-        <p>Sair</p>
-      </button>
+      <div className='w-full space-y-2'>
+        <div className='flex w-full items-center justify-center gap-2 rounded p-2 hover:bg-blue-500'>
+          <IoCog size={ICON_SIZE.SMALL} />
+          <p>Configurações</p>
+        </div>
+        <button className='flex w-full items-center justify-center gap-2 rounded p-2 text-red-500 hover:bg-red-500/20'>
+          <IoIosExit size={ICON_SIZE.SMALL} />
+          <p>Sair</p>
+        </button>
+      </div>
     </nav>
   );
 }
