@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { FaMoneyBill, FaPlus } from 'react-icons/fa6';
 import { IoIosExit, IoIosLock } from 'react-icons/io';
 import MobileSidebarItem from './MobileSidebarItem';
+import ThemeSelector from '../ThemeSelector';
 
 export default function MobileSidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,10 +85,13 @@ export default function MobileSidebar() {
               </div>
             </div>
           ))}
-          <button className='flex w-full items-center justify-center gap-2 rounded bg-red-500/20 p-2 text-xl font-bold text-red-500 active:bg-red-500/50'>
-            <IoIosExit size={ICON_SIZE.EXTRA_SMALL} />
-            <p>Sair</p>
-          </button>
+          <div className='w-full space-y-2'>
+            <ThemeSelector />
+            <button className='flex w-full items-center justify-center gap-2 rounded bg-red-500/20 p-2 text-xl font-bold text-red-500 active:bg-red-500/50'>
+              <IoIosExit size={ICON_SIZE.EXTRA_SMALL} />
+              <p>Sair</p>
+            </button>
+          </div>
         </div>
       </div>
       {isOpen && (
