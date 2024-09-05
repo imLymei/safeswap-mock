@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Sidebar from './_components/Sidebar';
 import { cn } from '@/lib/utils';
-import MobileSidebar from './_components/MobileSidebar';
+import MobileSidebar from './_components/sidebar/mobile/MobileSidebar';
+import { ThemeProvider } from 'next-themes';
+import Sidebar from './_components/sidebar/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
