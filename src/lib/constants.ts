@@ -17,7 +17,7 @@ import {
 } from 'react-icons/fa6';
 
 export const ICON_SIZE = {
-  MOBILE: 20,
+  EXTRA_SMALL: 20,
   SMALL: 30,
   MEDIUM: 45,
   LARGE: 60,
