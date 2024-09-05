@@ -3,12 +3,15 @@
 import { cn } from '@/lib/utils';
 import { ICON_SIZE, NAVBAR_SECTIONS } from '@/lib/constants';
 import { useState } from 'react';
-import { IoIosExit, IoIosLock } from 'react-icons/io';
+import { IoIosExit, IoIosLock, IoIosSunny } from 'react-icons/io';
 import SideBarSection from './SideBarSection';
-import { IoCog } from 'react-icons/io5';
+import { IoCog, IoMoon } from 'react-icons/io5';
+import { RiComputerFill } from 'react-icons/ri';
+import { useTheme } from 'next-themes';
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
+  const { theme, systemTheme, setTheme } = useTheme();
 
   return (
     <nav
@@ -38,9 +41,43 @@ export default function Sidebar() {
         ))}
       </div>
       <div className='w-full space-y-2'>
-        <div className='flex w-full items-center justify-center gap-2 rounded p-2 hover:bg-blue-500'>
-          <IoCog size={ICON_SIZE.SMALL} />
-          <p>Configurações</p>
+        <div className='flex gap-1 rounded bg-neutral-900 p-1'>
+          <button
+            className={cn(
+              'flex flex-1 items-center justify-center rounded p-2',
+              {
+                'bg-neutral-950': theme === 'system',
+                'hover:bg-neutral-800': theme !== 'system',
+              },
+            )}
+            onClick={() => setTheme('system')}
+          >
+            <RiComputerFill size={ICON_SIZE.EXTRA_SMALL} />
+          </button>
+          <button
+            className={cn(
+              'flex flex-1 items-center justify-center rounded p-2',
+              {
+                'bg-neutral-950': theme === 'dark',
+                'hover:bg-neutral-800': theme !== 'dark',
+              },
+            )}
+            onClick={() => setTheme('dark')}
+          >
+            <IoMoon size={ICON_SIZE.EXTRA_SMALL} />
+          </button>
+          <button
+            className={cn(
+              'flex flex-1 items-center justify-center rounded p-2',
+              {
+                'bg-neutral-950': theme === 'light',
+                'hover:bg-neutral-800': theme !== 'light',
+              },
+            )}
+            onClick={() => setTheme('light')}
+          >
+            <IoIosSunny size={ICON_SIZE.EXTRA_SMALL} />
+          </button>
         </div>
         <button className='flex w-full items-center justify-center gap-2 rounded p-2 text-red-500 hover:bg-red-500/20'>
           <IoIosExit size={ICON_SIZE.SMALL} />
