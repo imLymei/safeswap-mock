@@ -9,7 +9,7 @@ export default function SideBarItem({ name, icon: Icon, href }: NavbarItem) {
       className='flex items-center gap-2 rounded p-2 hover:bg-blue-500'
       title={name}
     >
-      <Icon size={ICON_SIZE.SMALL} />
+      <Icon size={ICON_SIZE.EXTRA_SMALL} />
       <p className='line-clamp-1 flex-1'>{name}</p>
     </Link>
   );

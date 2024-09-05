@@ -23,10 +23,10 @@ export default function SideBarFolder({
         onClick={() => setIsOpen((isOpen) => !isOpen)}
         title={name}
       >
-        <Icon size={ICON_SIZE.SMALL} />
+        <Icon size={ICON_SIZE.EXTRA_SMALL} />
         <p className='line-clamp-1 flex-1 text-left'>{name}</p>
         <IoIosArrowDown
-          size={ICON_SIZE.SMALL}
+          size={ICON_SIZE.EXTRA_SMALL}
           className={cn({ 'rotate-180': isOpen })}
         />
       </button>

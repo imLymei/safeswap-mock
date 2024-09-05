@@ -35,18 +35,18 @@ export default function MobileSidebar() {
   return (
     <nav className='grid grid-cols-3 gap-4 p-2 text-xs sm:hidden'>
       <Link href='/' className='flex flex-col items-center gap-1 p-2'>
-        <FaMoneyBill size={ICON_SIZE.MOBILE} />
+        <FaMoneyBill size={ICON_SIZE.EXTRA_SMALL} />
         <p>Transações</p>
       </Link>
       <Link href='/' className='flex flex-col items-center gap-1 p-2'>
-        <IoIosLock size={ICON_SIZE.MOBILE} />
+        <IoIosLock size={ICON_SIZE.EXTRA_SMALL} />
         <p>Home</p>
       </Link>
       <button
         onClick={() => setIsOpen(true)}
         className='flex flex-col items-center gap-1 p-2'
       >
-        <FaPlus size={ICON_SIZE.MOBILE} />
+        <FaPlus size={ICON_SIZE.EXTRA_SMALL} />
         <p>Mais</p>
       </button>
       <div
@@ -85,7 +85,7 @@ export default function MobileSidebar() {
             </div>
           ))}
           <button className='flex w-full items-center justify-center gap-2 rounded bg-red-500/20 p-2 text-xl font-bold text-red-500 active:bg-red-500/50'>
-            <IoIosExit size={ICON_SIZE.MOBILE} />
+            <IoIosExit size={ICON_SIZE.EXTRA_SMALL} />
             <p>Sair</p>
           </button>
         </div>
