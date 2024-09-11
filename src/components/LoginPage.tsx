@@ -30,7 +30,6 @@ export default function LoginPage() {
           Usuário PJ
         </button>
       </div>
-      <ThemeSelector />
     </div>
   );
 }
