@@ -22,27 +22,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='pt-br'>
-      <ThemeProvider>
+    <html lang='pt-br' suppressHydrationWarning>
+      <body
+        className={cn(
+          inter.className,
+          'flex flex-col overflow-hidden bg-neutral-950 text-neutral-100',
+        )}
+      >
         <UserProvider>
-          <body
-            className={cn(
-              inter.className,
-              'flex flex-col overflow-hidden bg-neutral-950 text-neutral-100',
-            )}
-          >
-            <AppFormatter>
-              <LoginProvider>
+          <ThemeProvider attribute='class'>
+            <LoginProvider>
+              <AppFormatter>
                 <Sidebar />
                 <main className='flex-1 rounded bg-neutral-100 text-neutral-950 dark:bg-neutral-900 dark:text-neutral-100'>
                   {children}
                 </main>
                 <MobileSidebar />
-              </LoginProvider>
-            </AppFormatter>
-          </body>
+              </AppFormatter>
+            </LoginProvider>
+          </ThemeProvider>
         </UserProvider>
-      </ThemeProvider>
+      </body>
     </html>
   );
 }
