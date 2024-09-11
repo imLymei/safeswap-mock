@@ -1,3 +1,4 @@
+import { UserType } from '@/providers/UserProvider';
 import { IconType } from 'react-icons';
 import { FaCogs } from 'react-icons/fa';
 import {
@@ -39,11 +40,13 @@ export type NavbarItem = {
 export type NavbarSection = {
   name: string;
   navbarItems: (NavbarItem | NavbarFolder)[];
+  userType?: UserType;
 };
 
 export const NAVBAR_SECTIONS: NavbarSection[] = [
   {
     name: 'Admin',
+    userType: UserType.Admin,
     navbarItems: [
       { name: 'Transações', icon: FaArrowRightArrowLeft, href: '/' },
       {
