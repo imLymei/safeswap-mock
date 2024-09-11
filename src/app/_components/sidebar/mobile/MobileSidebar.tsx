@@ -3,14 +3,16 @@
 import { ICON_SIZE, NAVBAR_SECTIONS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { FaMoneyBill, FaPlus } from 'react-icons/fa6';
 import { IoIosExit, IoIosLock } from 'react-icons/io';
 import MobileSidebarItem from './MobileSidebarItem';
-import ThemeSelector from '../ThemeSelector';
+import ThemeSelector from '../../../../components/ThemeSelector';
+import { userContext } from '@/providers/UserProvider';
 
 export default function MobileSidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, setUser } = useContext(userContext);
 
   const drawerRef = useRef<HTMLDivElement>(null);
   const isFirstTouch = useRef(true);
@@ -59,7 +61,11 @@ export default function MobileSidebar() {
       >
         <div className='pointer-events-none absolute left-0 right-0 top-0 h-12 bg-gradient-to-b from-black' />
         <div className='h-full w-full space-y-12 overflow-auto p-6'>
-          {NAVBAR_SECTIONS.map((section) => (
+          {NAVBAR_SECTIONS.filter(
+            (sections) =>
+              sections.userType === undefined ||
+              sections.userType === user?.userType,
+          ).map((section) => (
             <div key={`mobile-section-${section.name}`} className='space-y-6'>
               <p className='text-xl font-bold'>{section.name}</p>
               <div className='grid grid-cols-3 gap-2'>
@@ -87,7 +93,10 @@ export default function MobileSidebar() {
           ))}
           <div className='w-full space-y-2'>
             <ThemeSelector />
-            <button className='flex w-full items-center justify-center gap-2 rounded bg-red-500/20 p-2 text-xl font-bold text-red-500 active:bg-red-500/50'>
+            <button
+              onClick={() => setUser(undefined)}
+              className='flex w-full items-center justify-center gap-2 rounded bg-red-500/20 p-2 text-xl font-bold text-red-500 active:bg-red-500/50'
+            >
               <IoIosExit size={ICON_SIZE.EXTRA_SMALL} />
               <p>Sair</p>
             </button>
